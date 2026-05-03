@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: fivestar-audio-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt && apt-get install -y ffmpeg || true
+    startCommand: python app.py
+    envVars:
+      - key: PORT
+        value: 5000
